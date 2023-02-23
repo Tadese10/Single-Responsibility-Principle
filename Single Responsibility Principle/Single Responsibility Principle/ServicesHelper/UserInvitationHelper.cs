@@ -7,21 +7,12 @@ using System.Threading.Tasks;
 
 namespace Single_Responsibility_Principle.ServicesHelper
 {
-  public  class UserInvitationHelper
-  {
-      private readonly UserNameService _userNameService;
-      private readonly EmailService _emailService;
-
-      public UserInvitationHelper(UserNameService userNameService, EmailService emailService)
-      {
-          _userNameService = userNameService;
-          _emailService = emailService;
-      }
-
+  public  class UserInvitationHelper: Validator
+    {
       public void SendNotification(string email, string firstName, string lastName)
       {
-          _userNameService.ValidateUserName(firstName, lastName);
-          _emailService.ValidateEmail(email);
+          ValidateUserName(firstName, lastName);
+          ValidateEmail(email);
 
           SmtpClient _client = new SmtpClient("", 80);
           _client.Send(new MailMessage("test@gmail.com", email)
@@ -29,6 +20,7 @@ namespace Single_Responsibility_Principle.ServicesHelper
               Subject = "Testing SOLID Principle"
           });
       }
+
       
   }
 }

@@ -16,11 +16,11 @@ namespace Single_Responsibility_Principle
             string lastName = Console.ReadLine();
 
             //Instantiate the dependencies
-            var emailService = new EmailService();
-            var userNameService = new UserNameService();
+            //var emailService = new EmailService();
+            //var userNameService = new UserNameService();
 
             //Create helper class instance
-            var userInvitationHelper = new UserInvitationHelper(userNameService, emailService);
+            var userInvitationHelper = new UserInvitationHelper();
 
             userInvitationHelper.SendNotification(email, firstName, lastName);
         }

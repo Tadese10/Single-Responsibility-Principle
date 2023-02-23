@@ -8,7 +8,7 @@ namespace Single_Responsibility_Principle.ServicesHelper
 {
   public  class EmailService
     {
-        public void ValidateEmail(string email)
+        public virtual void ValidateEmail(string email)
         {
             if (!email.Contains("@") || !email.Contains("."))
             {
