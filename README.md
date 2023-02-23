@@ -6,3 +6,6 @@ The idea behind this Single Responsibility Principle is that a class or entity s
 
 
 Later, I refactored the codes to implement Open-Close principle, which says that a class or entity should be open for extension and closed for modification.
+
+
+Lastly, I updated the UserInvitationHelper code to implement Singleton Pattern.
