@@ -15,8 +15,11 @@ namespace Single_Responsibility_Principle
             Console.WriteLine("Please enter LastName");
             string lastName = Console.ReadLine();
 
+            //Instantiate the dependencies
             var emailService = new EmailService();
             var userNameService = new UserNameService();
+
+            //Create helper class instance
             var userInvitationHelper = new UserInvitationHelper(userNameService, emailService);
 
             userInvitationHelper.SendNotification(email, firstName, lastName);
