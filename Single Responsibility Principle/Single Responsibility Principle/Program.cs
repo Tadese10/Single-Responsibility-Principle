@@ -1,4 +1,5 @@
 ﻿using System;
+using Single_Responsibility_Principle.ServicesHelper;
 
 namespace Single_Responsibility_Principle
 {
@@ -6,7 +7,19 @@ namespace Single_Responsibility_Principle
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Get User details
+            Console.WriteLine("Please enter Email");
+            string email = Console.ReadLine();
+            Console.WriteLine("Please enter FirstName");
+            string firstName = Console.ReadLine();
+            Console.WriteLine("Please enter LastName");
+            string lastName = Console.ReadLine();
+
+            var emailService = new EmailService();
+            var userNameService = new UserNameService();
+            var userInvitationHelper = new UserInvitationHelper(userNameService, emailService);
+
+            userInvitationHelper.SendNotification(email, firstName, lastName);
         }
     }
 }
