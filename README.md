@@ -5,4 +5,4 @@ I have two services, Email and UserName Services which will be used and instanci
 The idea behind this Single Responsibility Principle is that a class or entity should do a particular thing and must do it well and each of them has only one reason to change.
 
 
-Later, I refactored the codes to implement Open-Close principle, which says that a class or entity should be open for extesion and closed for modification.
+Later, I refactored the codes to implement Open-Close principle, which says that a class or entity should be open for extension and closed for modification.
