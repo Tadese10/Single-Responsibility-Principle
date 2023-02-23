@@ -7,8 +7,25 @@ using System.Threading.Tasks;
 
 namespace Single_Responsibility_Principle.ServicesHelper
 {
-  public  class UserInvitationHelper: Validator
+  public sealed class UserInvitationHelper: Validator
     {
+        private UserInvitationHelper(){}
+
+        private static UserInvitationHelper instance = null;
+
+        public static UserInvitationHelper Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new UserInvitationHelper();
+                }
+
+                return instance;
+            }
+        }
+
       public void SendNotification(string email, string firstName, string lastName)
       {
           ValidateUserName(firstName, lastName);

@@ -20,7 +20,7 @@ namespace Single_Responsibility_Principle
             //var userNameService = new UserNameService();
 
             //Create helper class instance
-            var userInvitationHelper = new UserInvitationHelper();
+            var userInvitationHelper = UserInvitationHelper.Instance;
 
             userInvitationHelper.SendNotification(email, firstName, lastName);
         }
